@@ -1,0 +1,35 @@
+{
+  "name": "anidesk-desktop Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "features": {
+    "ghcr.io/audacioustux/devcontainers-features/bun:1": {},
+    "ghcr.io/devcontainers-contrib/features/bun:1": {}
+  },
+  "forwardPorts": [3030, 5173, 5123],
+  "portsAttributes": {
+    "3030": {
+      "label": "API Server",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "Vite Dev Server",
+      "onAutoForward": "openBrowser"
+    },
+    "5123": {
+      "label": "Electron App",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "curl -fsSL https://bun.sh/install | bash && npm install -g pnpm && bun install && bun run build && bun test",
+  "postStartCommand": "npm run dev:all",
+  "remoteUser": "node"
+}
