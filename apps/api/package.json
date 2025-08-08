@@ -1,0 +1,31 @@
+{
+  "name": "anidesk-hianime-api",
+  "version": "1.0.0",
+  "description": "HiAnime API service for AniDesk - Local development service",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "bun run src/index.js",
+    "dev": "bun --watch src/index.js",
+    "node:start": "node src/index.js",
+    "node:dev": "node --watch src/index.js",
+    "build": "bun build src/index.js --outdir dist --target bun",
+    "test": "bun test"
+  },
+  "keywords": ["anime", "api", "hianime", "streaming", "bun", "nodejs"],
+  "author": "Darshil0305",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.24.3",
+    "@fastify/cors": "^8.4.0",
+    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
+  }
+}
