@@ -9,7 +9,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "declaration": false,
-    "sourceMap": true
+    "sourceMap": true,
+    "composite": true,
+    "noEmit": false
   },
   "include": [
     "src/main/**/*",
